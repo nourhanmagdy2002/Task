@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\TicketsController;
 use App\Http\Controllers\AdminUsersController;
 use App\Http\Controllers\AdminTicketController;
 use App\Http\Controllers\DeleteController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,4 +40,7 @@ Route::group(['prefix'=>'/admin'],function(){
 
 });
 Route::get('/delete',[DeleteController::class ,'delete']);
+
+Route::get('/category',[CategoryController::class ,'index']);
+Route::post('/category.save',[CategoryController::class ,'store'])->name('category.save')->middleware('CheckType');
 

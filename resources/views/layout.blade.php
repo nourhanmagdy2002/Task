@@ -25,15 +25,19 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/tickets/">Support Tickets</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/category">Add Category</a>
+                </li>
                 @guest
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link" href="/auth/login">Login</a>
                 </li>
                 @endguest
 
                 @auth
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout">Logout</a>
+                    <a class="nav-link" href="/auth/login">Logout</a>
                 </li>
                 @endauth
 
